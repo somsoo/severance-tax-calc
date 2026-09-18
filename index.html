@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <title>2026 퇴직소득세 계산 및 IRP 연금수령 절세 시뮬레이터</title>
+    <meta content="소득세법 제48조 근속연수공제 대폭 상향 기준 및 제55조 누진세율 4단계 연산으로 2026년 퇴직소득세 원천징수액과 IRP 계좌 연금 분할 수령 시 30%~40% 세액 감면 절세액을 즉시 계산합니다." name="description"/>
+    <meta content="2026 퇴직소득세 계산기, 퇴직금 소득세 공식, 소득세법 제48조 근속연수공제, 퇴직소득 환산급여 계산, IRP 연금수령 30% 40% 감면" name="keywords"/>
+    <meta content="index, follow" name="robots"/>
+    <link href="https://severance-tax.enjoy-onepage.com/" rel="canonical"/>
+    <meta content="website" property="og:type"/>
+    <meta content="ko_KR" property="og:locale"/>
+    <meta content="https://severance-tax.enjoy-onepage.com/" property="og:url"/>
+    <meta content="2026 퇴직소득세 & IRP 계산기" property="og:site_name"/>
+    <meta content="2026 퇴직소득세 계산 및 IRP 연금수령 절세 시뮬레이터" property="og:title"/>
+    <meta content="2026 소득세법 제48조 4차 다단계 연산에 따른 퇴직소득세 정산 및 IRP 30~40% 감면 절세액 비교" property="og:description"/>
+    <meta content="https://severance-tax.enjoy-onepage.com/og-image.png" property="og:image"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="2026 퇴직소득세 계산 및 IRP 연금수령 절세 시뮬레이터" name="twitter:title"/>
+    <meta content="소득세법 제48조 및 제129조의2 기준 퇴직세율 및 IRP 절세 비교" name="twitter:description"/>
+    <meta content="https://severance-tax.enjoy-onepage.com/og-image.png" name="twitter:image"/>
+    <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link href="/icon.png" rel="apple-touch-icon"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2228289204702106"></script>
+    <style id="layout-shield">
+      html, body { max-width: 100%; overflow-x: hidden; }
+      .manual-ad-box { width: 100%; max-width: 960px; margin-left: auto; margin-right: auto; text-align: center; overflow: hidden; }
+      .manual-ad-box ins { max-width: 100% !important; overflow: hidden !important; }
+      :focus-visible { outline: 2px solid #3b82f6 !important; outline-offset: 2px !important; }
+      input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible { outline: 2px solid #2563eb !important; outline-offset: 1px !important; }
+    </style>
+    <style id="mobile-hardening-shield">
+      body, h1, h2, h3, h4, p, span, label { word-break: keep-all; overflow-wrap: break-word; }
+      button, [role="button"], a.btn { white-space: nowrap; word-break: keep-all; }
+      @media (max-width: 640px) {
+        input, select, textarea { font-size: 16px !important; }
+        button, [role="button"], a.btn { min-height: 44px; }
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans min-h-screen flex flex-col justify-between">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a class="flex items-center gap-2 text-slate-900 font-bold text-lg hover:text-amber-600 transition" href="/">
+                <span class="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center font-black text-sm shadow-sm">퇴직</span>
+                <span>퇴직소득세 & IRP 계산기</span>
+            </a>
+            <div class="flex items-center gap-2 text-xs text-slate-500 font-medium">
+                <span class="inline-block w-2 h-2 rounded-full bg-amber-500"></span> 소득세법 제48조 개정안
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Ad Banner -->
+    <div class="manual-ad-box ad-top-banner" style="width: 100%; max-width: 960px; margin: 8px auto 16px; text-align: center;">
+        <ins class="adsbygoogle" data-ad-client="ca-pub-2228289204702106" data-ad-format="horizontal" data-ad-slot="3824727725" data-full-width-responsive="true" style="display:inline-block;width:100%;height:60px;"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="max-w-5xl mx-auto px-4 pt-4 pb-2 w-full">
+        <div class="border-b border-slate-200 pb-4">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 mb-2">
+                <span>소득세법 제48조, 제55조, 제129조의2 법정 산식 100% 반영</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                2026 퇴직소득세 정산 및 IRP 연금수령 절세 계산기
+            </h1>
+            <p class="text-slate-600 text-sm mt-1">
+                4차 다단계 환산급여 공식과 일시금 원천징수 실효세율, IRP 분할 인출 시 30%~40% 세금 감면액을 산출합니다.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto px-4 py-4 w-full flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <!-- Left: Inputs (6 cols) -->
+            <section class="lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 space-y-4">
+                <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-4 bg-amber-600 rounded-full"></span>
+                    근속연수 및 퇴직금 총액 입력
+                </h2>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1" for="severanceAmount">세전 퇴직금 총지급액</label>
+                    <div class="relative">
+                        <input type="text" id="severanceAmount" value="150,000,000" class="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 font-bold text-base focus:ring-2 focus:ring-amber-500" placeholder="예: 150,000,000">
+                        <span class="absolute right-3 top-2.5 text-xs text-slate-400 font-normal">원</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1" for="serviceYears">근속연수 (1년 미만 절상)</label>
+                        <div class="relative">
+                            <input type="number" id="serviceYears" value="15" min="1" max="50" class="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 font-bold text-base focus:ring-2 focus:ring-amber-500">
+                            <span class="absolute right-3 top-2.5 text-xs text-slate-400 font-normal">년</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1" for="irpYears">희망 IRP 수령 기간</label>
+                        <select id="irpYears" class="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 font-semibold text-base focus:ring-2 focus:ring-amber-500">
+                            <option value="5">5년 (30% 감면)</option>
+                            <option value="10">10년 (30% 감면)</option>
+                            <option value="15" selected>15년 (11년차~ 40% 감면)</option>
+                            <option value="20">20년 (11년차~ 40% 감면)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="p-3.5 bg-amber-50/60 rounded-xl border border-amber-100 text-xs text-amber-900 leading-relaxed">
+                    <span class="font-bold block mb-1">📌 개정 근속연수공제 혜택</span>
+                    소득세법 제48조에 따라 10년 초과 20년 이하 근속 구간은 1,500만 원 + 250만 원 × (근속-10)으로 공제폭이 대폭 확대되었습니다.
+                </div>
+
+                <div class="flex gap-2 pt-2">
+                    <button id="calcBtn" type="button" class="flex-1 py-3.5 px-4 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl shadow-md transition text-base flex items-center justify-center gap-2">
+                        퇴직소득세 & 절세액 계산하기
+                    </button>
+                    <button id="resetBtn" type="button" class="px-4 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-600 font-semibold rounded-xl transition text-sm">
+                        초기화
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right: Receipt (6 cols) -->
+            <section class="lg:col-span-6 lg:sticky lg:top-20 space-y-4">
+                <div class="bg-white rounded-2xl p-6 shadow-md border-2 border-amber-500/30">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-3">
+                        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">퇴직금 실수령액 정산 영수증</span>
+                        <span class="text-xs font-black px-2.5 py-1 rounded bg-amber-100 text-amber-800">실효세율: <span id="effectiveTaxRate">3.77</span>%</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <span class="text-xs text-slate-500 block mb-1">일시금 수령 시 통장 입금액 (세후)</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="resNetTakehome" class="text-3xl sm:text-4xl font-black text-amber-600">144,348,750</span>
+                            <span class="text-lg font-bold text-slate-800">원</span>
+                        </div>
+                        <span class="text-xs text-rose-600 font-semibold">총 원천징수 세액: -<span id="resTotalTax">5,651,250</span>원 (지방세 포함)</span>
+                    </div>
+
+                    <!-- 4-Step Breakdown Table -->
+                    <div class="space-y-2 text-xs border-t border-b border-slate-100 py-3 mb-4">
+                        <div class="flex justify-between text-slate-600">
+                            <span>1단계 근속연수공제</span>
+                            <span id="resServiceDeduct" class="font-bold text-slate-900">27,500,000원</span>
+                        </div>
+                        <div class="flex justify-between text-slate-600">
+                            <span>2단계 환산급여 (연환산 12배)</span>
+                            <span id="resConvertedSalary" class="font-bold text-slate-900">98,000,000원</span>
+                        </div>
+                        <div class="flex justify-between text-slate-600">
+                            <span>3단계 환산급여공제 차감</span>
+                            <span id="resSalaryDeduct" class="font-bold text-slate-900">60,600,000원</span>
+                        </div>
+                        <div class="flex justify-between text-slate-600">
+                            <span>환산 과세표준</span>
+                            <span id="resTaxBase" class="font-bold text-slate-900">37,400,000원</span>
+                        </div>
+                        <div class="flex justify-between text-slate-600">
+                            <span>환산 산출세액 (기본세율 적용)</span>
+                            <span id="resConvertedTax" class="font-bold text-slate-900">4,110,000원</span>
+                        </div>
+                        <div class="flex justify-between text-slate-800 font-semibold pt-1 border-t border-slate-100">
+                            <span>퇴직소득 산출 국세</span>
+                            <span id="resNationalTax" class="font-bold">5,137,500원</span>
+                        </div>
+                        <div class="flex justify-between text-slate-500">
+                            <span>지방소득세 (10%)</span>
+                            <span id="resLocalTax" class="font-medium">513,750원</span>
+                        </div>
+                    </div>
+
+                    <!-- IRP Benefit Box -->
+                    <div class="p-3.5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-200">
+                        <div class="flex justify-between items-center text-xs text-emerald-950 font-bold mb-1">
+                            <span>🎉 IRP 연금 분할 수령 시 세금 절감</span>
+                            <span id="irpDiscountBadge" class="px-2 py-0.5 bg-emerald-200 text-emerald-800 rounded font-bold">최대 40% 감면</span>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <span class="text-xs text-emerald-700">총 절세 환급액</span>
+                            <span class="text-xl font-black text-emerald-700">+<span id="resIrpSavedTax">2,448,875</span>원</span>
+                        </div>
+                        <div class="text-[11px] text-emerald-800 mt-1 flex justify-between border-t border-emerald-200/60 pt-1.5">
+                            <span>IRP 계좌 최종 총 수령액</span>
+                            <span class="font-bold text-emerald-900"><span id="resIrpTotalTakehome">146,797,625</span>원</span>
+                        </div>
+                    </div>
+
+                    <button id="copyResultBtn" type="button" class="w-full mt-4 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition">
+                        결과 전체 복사하기
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Guide -->
+        <section class="mt-12 bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span class="w-2 h-4 bg-amber-600 rounded-full"></span>
+                퇴직소득세 4단계 연산 공식 및 IRP 감면 혜택
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-600">
+                <div class="p-4 bg-slate-50 rounded-xl">
+                    <h3 class="font-bold text-slate-900 mb-1">1. 퇴직소득 4차 다단계 연산 구조</h3>
+                    <p>퇴직금은 분류과세되므로 근속연수공제 ➔ 12배 연환산 ➔ 환산급여공제 ➔ 기본세율(6~45%) 적용 후 다시 근속연수로 환원하는 4차 연산 단계를 거치며, 근속기간이 길수록 실효세율이 3~5%대로 현저히 낮아집니다.</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-xl">
+                    <h3 class="font-bold text-slate-900 mb-1">2. IRP 연금수령 시 세액 감면 (소득세법 제129조의2)</h3>
+                    <p>퇴직금을 일시에 인출하지 않고 IRP 계좌로 수령하여 연금으로 분할 인출할 경우 1~10년차는 원래 퇴직세율의 70%(30% 감면), 11년차 이후는 60%(40% 감면)만 부과되어 수백만 원의 세금을 아낄 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Large Ad Banner -->
+    <div class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; margin: 24px auto 16px; text-align: center;">
+        <ins class="adsbygoogle" data-ad-client="ca-pub-2228289204702106" data-ad-format="auto" data-ad-slot="3416334507" data-full-width-responsive="true" style="display:block;"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
+        <p>© 2026 퇴직소득세 시뮬레이터. 소득세법 제48조, 제55조, 제129조의2 준용.</p>
+    </footer>
+
+    <script>
+        function parseNum(val) {
+            if (!val) return 0;
+            return parseInt(val.toString().replace(/,/g, ''), 10) || 0;
+        }
+        function fmtNum(n) {
+            return Math.round(n).toLocaleString('ko-KR');
+        }
+
+        document.getElementById('severanceAmount').addEventListener('input', (e) => {
+            let v = parseNum(e.target.value);
+            e.target.value = v ? v.toLocaleString('ko-KR') : '';
+            calculate();
+        });
+
+        // 1. Service Year Deduction (소득세법 제48조 제1항 제1호)
+        function getServiceDeduction(y) {
+            if (y <= 5) return 1000000 * y;
+            if (y <= 10) return 5000000 + 2000000 * (y - 5);
+            if (y <= 20) return 15000000 + 2500000 * (y - 10);
+            return 40000000 + 3000000 * (y - 20);
+        }
+
+        // 2. Converted Salary Deduction (소득세법 제48조 제1항 제2호)
+        function getConvertedSalaryDeduction(sal) {
+            if (sal <= 8000000) return sal;
+            if (sal <= 70000000) return 8000000 + (sal - 8000000) * 0.60;
+            if (sal <= 100000000) return 45200000 + (sal - 70000000) * 0.55;
+            if (sal <= 300000000) return 61700000 + (sal - 100000000) * 0.45;
+            return 151700000 + (sal - 300000000) * 0.35;
+        }
+
+        // 3. Basic Progressive Income Tax (소득세법 제55조)
+        function calcProgressiveTax(taxBase) {
+            if (taxBase <= 14000000) return taxBase * 0.06;
+            if (taxBase <= 50000000) return 840000 + (taxBase - 14000000) * 0.15;
+            if (taxBase <= 88000000) return 6240000 + (taxBase - 50000000) * 0.24;
+            if (taxBase <= 150000000) return 15360000 + (taxBase - 88000000) * 0.35;
+            if (taxBase <= 300000000) return 37060000 + (taxBase - 150000000) * 0.38;
+            if (taxBase <= 500000000) return 94060000 + (taxBase - 300000000) * 0.40;
+            if (taxBase <= 1000000000) return 174060000 + (taxBase - 500000000) * 0.42;
+            return 384060000 + (taxBase - 1000000000) * 0.45;
+        }
+
+        function calculate() {
+            const amount = parseNum(document.getElementById('severanceAmount').value);
+            const y = Math.max(1, parseInt(document.getElementById('serviceYears').value, 10) || 1);
+            const irpY = parseInt(document.getElementById('irpYears').value, 10);
+
+            // Step 1: Service deduction
+            const serviceDeduct = getServiceDeduction(y);
+            const afterService = Math.max(0, amount - serviceDeduct);
+
+            // Step 2: 12x Converted Salary
+            const convertedSalary = (afterService / y) * 12;
+
+            // Step 3: Converted Salary Deduction
+            const convertedSalaryDeduct = getConvertedSalaryDeduction(convertedSalary);
+            const taxBase = Math.max(0, convertedSalary - convertedSalaryDeduct);
+
+            // Step 4: Tax Calculation
+            const convertedTax = calcProgressiveTax(taxBase);
+            const nationalTax = (convertedTax / 12) * y;
+            const localTax = nationalTax * 0.10;
+            const totalTax = nationalTax + localTax;
+
+            const netTakehome = Math.max(0, amount - totalTax);
+            const effectiveRate = amount > 0 ? ((totalTax / amount) * 100).toFixed(2) : 0;
+
+            document.getElementById('resNetTakehome').textContent = fmtNum(netTakehome);
+            document.getElementById('resTotalTax').textContent = fmtNum(totalTax);
+            document.getElementById('effectiveTaxRate').textContent = effectiveRate;
+
+            document.getElementById('resServiceDeduct').textContent = fmtNum(serviceDeduct) + '원';
+            document.getElementById('resConvertedSalary').textContent = fmtNum(convertedSalary) + '원';
+            document.getElementById('resSalaryDeduct').textContent = fmtNum(convertedSalaryDeduct) + '원';
+            document.getElementById('resTaxBase').textContent = fmtNum(taxBase) + '원';
+            document.getElementById('resConvertedTax').textContent = fmtNum(convertedTax) + '원';
+            document.getElementById('resNationalTax').textContent = fmtNum(nationalTax) + '원';
+            document.getElementById('resLocalTax').textContent = fmtNum(localTax) + '원';
+
+            // IRP calculation: up to 10 yrs 30% discount, 11+ yrs 40% discount
+            let irpTaxPaid = 0;
+            let annualTaxOriginal = totalTax / irpY;
+            for (let year = 1; year <= irpY; year++) {
+                if (year <= 10) {
+                    irpTaxPaid += annualTaxOriginal * 0.70;
+                } else {
+                    irpTaxPaid += annualTaxOriginal * 0.60;
+                }
+            }
+            const irpSavedTax = Math.max(0, totalTax - irpTaxPaid);
+            const irpTotalTakehome = amount - irpTaxPaid;
+
+            document.getElementById('irpDiscountBadge').textContent = irpY > 10 ? '11년차 이후 40% 감면' : '30% 감면 적용';
+            document.getElementById('resIrpSavedTax').textContent = fmtNum(irpSavedTax);
+            document.getElementById('resIrpTotalTakehome').textContent = fmtNum(irpTotalTakehome);
+        }
+
+        document.getElementById('serviceYears').addEventListener('input', calculate);
+        document.getElementById('irpYears').addEventListener('change', calculate);
+        document.getElementById('calcBtn').addEventListener('click', calculate);
+
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            document.getElementById('severanceAmount').value = '150,000,000';
+            document.getElementById('serviceYears').value = '15';
+            document.getElementById('irpYears').value = '15';
+            calculate();
+            showToastNotification('기본 입력값으로 초기화되었습니다.');
+        });
+
+        function showToastNotification(msg) {
+            let toast = document.getElementById('global-ux-toast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'global-ux-toast';
+                toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:12px 24px;border-radius:9999px;font-size:14px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.2);z-index:9999;transition:all 0.3s ease;opacity:0;pointer-events:none;';
+                document.body.appendChild(toast);
+            }
+            toast.textContent = msg;
+            toast.style.opacity = '1';
+            toast.style.transform = 'translateX(-50%) translateY(0)';
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(-50%) translateY(10px)';
+            }, 2200);
+        }
+
+        document.getElementById('copyResultBtn').addEventListener('click', () => {
+            const net = document.getElementById('resNetTakehome').textContent;
+            const tax = document.getElementById('resTotalTax').textContent;
+            const rate = document.getElementById('effectiveTaxRate').textContent;
+            const saved = document.getElementById('resIrpSavedTax').textContent;
+            const text = `[2026 퇴직소득세 & IRP 정산 결과]\n• 일시금 실수령액: ${net}원\n• 총 원천징수 세액: ${tax}원 (실효세율 ${rate}%)\n• IRP 분할 수령 시 절세액: +${saved}원\n\n👉 바로가기: ${window.location.href}`;
+            navigator.clipboard.writeText(text).then(() => {
+                showToastNotification('정산 결과가 클립보드에 복사되었습니다! 🎉');
+            }).catch(() => {
+                showToastNotification('복사 완료: ' + window.location.href);
+            });
+        });
+
+        calculate();
+    </script>
+</body>
+</html>
