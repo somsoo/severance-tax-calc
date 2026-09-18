@@ -40,6 +40,61 @@
         button, [role="button"], a.btn { min-height: 44px; }
       }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://severance-tax.enjoy-onepage.com/#webapp",
+          "name": "2026 퇴직소득세 계산 및 IRP 연금수령 절세 시뮬레이터",
+          "url": "https://severance-tax.enjoy-onepage.com/",
+          "applicationCategory": "UtilityApplication",
+          "operatingSystem": "All",
+          "browserRequirements": "Requires JavaScript. Requires HTML5.",
+          "description": "소득세법 제48조 및 제129조의2 기준 퇴직세율 및 IRP 절세 비교",
+          "image": "https://severance-tax.enjoy-onepage.com/og-image.png",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "KRW"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://severance-tax.enjoy-onepage.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "퇴직소득세는 종합소득세와 왜 다르게 계산되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "퇴직소득은 장기간 축적된 소득이 일시에 발생하므로 종합과세되지 않고 분류과세됩니다. 근속연수공제와 12배 연환산 단계를 거쳐 실효세율을 대폭 낮춰줍니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "개정된 근속연수공제는 어떤 혜택이 있나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "소득세법 제48조 개정으로 10년 초과 20년 이하 근속 시 기본 1,500만 원에 초과 연수당 250만 원이 공제되어 세부담이 과거 대비 절반 이하로 줄어듭니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "IRP 계좌로 퇴직금을 수령하면 세금이 얼마나 감면되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "소득세법 제129조의2에 따라 1~10년차 연금 수령 시 원래 퇴직소득세의 30%가 감면(70%만 과세)되며, 11년차 이후에는 40%가 감면(60%만 과세)됩니다."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased font-sans min-h-screen flex flex-col justify-between">
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
@@ -216,15 +271,45 @@
         </section>
     </main>
 
+    <!-- 🔗 딥리서치 토픽 클러스터: 관련 전문 블로그 가이드 역링크 -->
+    <section class="max-w-5xl mx-auto my-6 px-4">
+      <div class="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-200/80 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl flex-shrink-0">📜</span>
+          <div class="text-left">
+            <div class="text-[11px] font-bold text-blue-600 uppercase tracking-wider">공식 심층 리포트 연계</div>
+            <div class="text-xs sm:text-sm font-bold text-slate-800 leading-snug">2026 퇴직연금 IRP 계좌 이전 세액 감면 및 근속연수공제 환산급여 가이드</div>
+          </div>
+        </div>
+        <a href="https://finance-kr.enjoy-onepage.com/2026/09/18/single-household-head-requirements/" target="_blank" rel="noopener noreferrer" class="shrink-0 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition shadow-sm hover:shadow flex items-center gap-1.5">
+          <span>전문 분석 보기</span>
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+
     <!-- Bottom Large Ad Banner -->
     <div class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; margin: 24px auto 16px; text-align: center;">
         <ins class="adsbygoogle" data-ad-client="ca-pub-2228289204702106" data-ad-format="auto" data-ad-slot="3416334507" data-full-width-responsive="true" style="display:block;"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
-        <p>© 2026 퇴직소득세 시뮬레이터. 소득세법 제48조, 제55조, 제129조의2 준용.</p>
+    
+    <footer class="bg-white border-t border-slate-200 py-8 px-4 text-center text-xs text-slate-500">
+        <div class="max-w-5xl mx-auto space-y-3">
+            <div class="flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-600">
+                <a class="hover:text-indigo-600 transition-colors" href="/about.html">서비스 소개 및 법정 산정식</a>
+                <span>·</span>
+                <a class="hover:text-indigo-600 transition-colors" href="/privacy.html">개인정보처리방침</a>
+                <span>·</span>
+                <a class="hover:text-indigo-600 transition-colors" href="/terms.html">서비스 이용약관</a>
+            </div>
+            <p>본 계산기는 관계 법령 및 공인 고시를 기준으로 작성된 모의 시뮬레이터이며 실제 행정 심사 결과와 상이할 수 있습니다.</p>
+            <p class="text-[11px] text-slate-400">© 2026 2026 퇴직소득세 계산 및 IRP 연금수령 절세 시뮬레이터. All rights reserved.</p>
+        </div>
     </footer>
+
 
     <script>
         function parseNum(val) {
