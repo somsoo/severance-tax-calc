@@ -4,8 +4,8 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <title>2026 퇴직소득세 계산 및 IRP 연금수령 절세 시뮬레이터</title>
-    <meta content="소득세법 제48조 근속연수공제 대폭 상향 기준 및 제55조 누진세율 4단계 연산으로 2026년 퇴직소득세 원천징수액과 IRP 계좌 연금 분할 수령 시 30%~40% 세액 감면 절세액을 즉시 계산합니다." name="description"/>
+    <title>2026 퇴직소득세 계산 및 IRP 연금수령 절세</title>
+    <meta content="소득세법 제48조 근속연수공제 대폭 상향 기준 및 제55조 누진세율 4단계 연산으로 2026년 퇴직소득세 원천징수액과 IRP 계좌." name="description"/>
     <meta content="2026 퇴직소득세 계산기, 퇴직금 소득세 공식, 소득세법 제48조 근속연수공제, 퇴직소득 환산급여 계산, IRP 연금수령 30% 40% 감면" name="keywords"/>
     <meta content="index, follow" name="robots"/>
     <link href="https://severance-tax.enjoy-onepage.com/" rel="canonical"/>
@@ -13,11 +13,11 @@
     <meta content="ko_KR" property="og:locale"/>
     <meta content="https://severance-tax.enjoy-onepage.com/" property="og:url"/>
     <meta content="2026 퇴직소득세 & IRP 계산기" property="og:site_name"/>
-    <meta content="2026 퇴직소득세 계산 및 IRP 연금수령 절세 시뮬레이터" property="og:title"/>
+    <meta content="2026 퇴직소득세 계산 및 IRP 연금수령 절세" property="og:title"/>
     <meta content="2026 소득세법 제48조 4차 다단계 연산에 따른 퇴직소득세 정산 및 IRP 30~40% 감면 절세액 비교" property="og:description"/>
     <meta content="https://severance-tax.enjoy-onepage.com/og-image.png" property="og:image"/>
     <meta content="summary_large_image" name="twitter:card"/>
-    <meta content="2026 퇴직소득세 계산 및 IRP 연금수령 절세 시뮬레이터" name="twitter:title"/>
+    <meta content="2026 퇴직소득세 계산 및 IRP 연금수령 절세" name="twitter:title"/>
     <meta content="소득세법 제48조 및 제129조의2 기준 퇴직세율 및 IRP 절세 비교" name="twitter:description"/>
     <meta content="https://severance-tax.enjoy-onepage.com/og-image.png" name="twitter:image"/>
     <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
@@ -94,6 +94,25 @@
     }
     </script>
 
+<script id="math-guard">
+// Global Math & DOM Output Guard: prevents NaN / Infinity leaks to UI
+(function() {
+  const origToLocaleString = Number.prototype.toLocaleString;
+  Number.prototype.toLocaleString = function(locales, options) {
+    if (!Number.isFinite(this.valueOf())) return '0';
+    return origToLocaleString.call(this, locales, options);
+  };
+  const origToFixed = Number.prototype.toFixed;
+  Number.prototype.toFixed = function(digits) {
+    if (!Number.isFinite(this.valueOf())) return '0';
+    return origToFixed.call(this, digits);
+  };
+})();
+</script>
+<style id="ad-cls-shield">
+  .ad-bottom { min-height: 280px !important; }
+  .ad-bottom ins { min-height: 280px !important; }
+</style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased font-sans min-h-screen flex flex-col justify-between">
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
@@ -282,7 +301,14 @@
     </div>
 
   
-    <!-- E-E-A-T FAQ Section (16-5 헌법 준수) -->
+    <!-- ADSENSE START: mid -->
+<div class="ad-box ad-mid" style="max-width:1080px;margin:16px auto;padding:0 14px;text-align:center;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2228289204702106" data-ad-slot="1186914926" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ADSENSE END: mid -->
+
+<!-- E-E-A-T FAQ Section (16-5 헌법 준수) -->
     <section class="mt-8 mb-8 space-y-3">
       <h2 class="text-xl font-bold text-gray-900 mb-4">자주 묻는 질문 (FAQ)</h2>
       <details class="bg-gray-50 p-4 rounded-xl border border-gray-200 group">
@@ -335,8 +361,8 @@
 
 
     <!-- Bottom Large Ad Banner -->
-    <div class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; margin: 24px auto 16px; text-align: center;">
-        <ins class="adsbygoogle" data-ad-client="ca-pub-2228289204702106" data-ad-format="auto" data-ad-slot="3416334507" data-full-width-responsive="true" style="display:block;"></ins>
+    <div class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; margin: 24px auto 16px; text-align: center;min-height:280px;">
+        <ins class="adsbygoogle" data-ad-client="ca-pub-2228289204702106" data-ad-format="auto" data-ad-slot="3416334507" data-full-width-responsive="true" style="display:block;min-height:280px;"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
